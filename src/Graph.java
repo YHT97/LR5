@@ -41,32 +41,28 @@ class Graph
         Graph g = new Graph(size);
         while (!EXIT) {
         System.out.println("""
-                1.Add Edge 
-                2.Generate Graph 
+                1.Add Edge\040
+                2.Generate Graph\040
                 3.DFS""");
         int toggle = scan.nextInt();
             switch (toggle) {
-                case 1: {
+                case 1 -> {
                     System.out.println("Enter Start and End of line");
                     int start = scan.nextInt();
                     int end = scan.nextInt();
                     g.addEdge(start, end);
-                    break;
                 }
-                case 2: {
+                case 2 -> {
 
                     System.out.println("Enter number of edge:");
-                    for(int i=0;i<size;i++){
-                        g.addEdge(i,(int) (Math.random()*size));
+                    for (int i = 0; i < size; i++) {
+                        g.addEdge(i, (int) (Math.random() * size));
                     }
-                    break;
                 }
-                case 3: {
-                    EXIT=true;
+                case 3 -> {
+                    EXIT = true;
                     g.DFS(0);
                     System.out.println();
-                    break;
-
                 }
             }
         }
